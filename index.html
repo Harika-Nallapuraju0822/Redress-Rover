@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Redress Rover</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; font-size: 28px;"> Redress Rover</h1>
+        <form id="grievanceForm">
+            <label for="sector" class="left-align-label"><b>Select Sector:</b></label>
+    <select id="sector" name="sector">
+        <option value="" disabled selected hidden>Select Any Option</option>
+        <option value="police">Police</option>
+        <option value="fire">Fire Department</option>
+        <option value="Health">Health </option>
+        <option value="cyber">Public Safety and Law Enforcement</option>
+        <option value="Traffic">Traffic and Parking Violations</option>
+        <option value="consumer">Consumer Complaints</option>
+    </select>
+           
+            <div class="photo-section">
+                <label for="photo" style="text-align: left; font-size: 16px;"><b>Capture Photo:</b></label>
+                <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+                <button type="button" id="capturePhoto" class="photo-upload">Capture Photo</button>
+                <img id="capturedImage" alt="Captured Photo" style="display: none;">
+            </div>
+
+            <label for="message" style="text-align: left; font-size: 16px;"><b>Text Message:</b></label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
+
+            <label for="voiceMessage" style="text-align: left; font-size: 16px;"><b>Voice Message:</b></label>
+            <input type="file" id="voiceMessage" name="voiceMessage" accept="audio/*" style="display: none;">
+
+           
+            <audio id="audioPlayer" controls style="display: none;"></audio>
+
+            <button type="button" id="startRecording">Start Voice Recording</button>
+            <button type="button" id="stopRecording">Stop Voice Recording</button>
+            <button type="button" id="clearRecording">Clear Recording</button>
+            <button type="button" id="playVoiceMessage">Play Voice Message</button>
+            <button type="button" onclick="submitGrievance()">Submit Grievance</button>
+        </form>
+
+        <div id="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
